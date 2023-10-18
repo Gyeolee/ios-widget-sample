@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  WidgetView.swift
 //  WidgetSample
 //
 //  Created by Hangyeol on 10/18/23.
@@ -8,22 +8,22 @@
 import SwiftUI
 import WidgetKit
 
-struct ContentView: View {
+struct WidgetView: View {
     var body: some View {
-        VStack {
-            Button {
-                WidgetCenter.shared.reloadTimelines(ofKind: "MyWidget")
-            } label: {
-                Text("Reload Timelines")
-            }
+        ZStack {
+            Color.yellow
+                .ignoresSafeArea()
             
-            Button {
-                WidgetCenter.shared.reloadAllTimelines()
-            } label: {
-                Text("Reload All Timelines")
+            VStack(spacing: 20) {
+                Button("Reload Timelines") {
+                    WidgetCenter.shared.reloadTimelines(ofKind: "MyWidget")
+                }
+                
+                Button("Reload All Timelines") {
+                    WidgetCenter.shared.reloadAllTimelines()
+                }
             }
         }
-        .padding()
         .onAppear {
             WidgetCenter.shared.getCurrentConfigurations { result in
                 switch result {
@@ -41,5 +41,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    WidgetView()
 }

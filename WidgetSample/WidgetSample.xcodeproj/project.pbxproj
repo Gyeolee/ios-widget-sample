@@ -19,6 +19,11 @@
 		6269BC502ADFA39E00BABB9A /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269BC4F2ADFA39E00BABB9A /* AppIntent.swift */; };
 		6269BC522ADFA3A000BABB9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6269BC512ADFA3A000BABB9A /* Assets.xcassets */; };
 		6269BC562ADFA3A000BABB9A /* MyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6269BC422ADFA39E00BABB9A /* MyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6269BC5B2ADFB7AA00BABB9A /* MyWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269BC4B2ADFA39E00BABB9A /* MyWidgetLiveActivity.swift */; };
+		6269BC5D2ADFBE0D00BABB9A /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269BC5C2ADFBE0D00BABB9A /* WidgetView.swift */; };
+		6269BC5F2ADFBE1600BABB9A /* LiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269BC5E2ADFBE1600BABB9A /* LiveActivityView.swift */; };
+		6269BC632ADFBF1C00BABB9A /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269BC622ADFBF1C00BABB9A /* TabBar.swift */; };
+		6269BC662ADFC64200BABB9A /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269BC652ADFC64200BABB9A /* Styles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,10 @@
 		6269BC4F2ADFA39E00BABB9A /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		6269BC512ADFA3A000BABB9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6269BC532ADFA3A000BABB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6269BC5C2ADFBE0D00BABB9A /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
+		6269BC5E2ADFBE1600BABB9A /* LiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityView.swift; sourceTree = "<group>"; };
+		6269BC622ADFBF1C00BABB9A /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		6269BC652ADFC64200BABB9A /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				6269BC132ADF9DBE00BABB9A /* WidgetSampleApp.swift */,
-				6269BC152ADF9DBE00BABB9A /* ContentView.swift */,
+				6269BC612ADFBF0800BABB9A /* Navigation */,
+				6269BC602ADFBEFF00BABB9A /* Views */,
+				6269BC642ADFC63300BABB9A /* Styles */,
 				6269BC172ADF9DBF00BABB9A /* Assets.xcassets */,
 				6269BC192ADF9DBF00BABB9A /* Preview Content */,
 			);
@@ -140,6 +151,32 @@
 				6269BC532ADFA3A000BABB9A /* Info.plist */,
 			);
 			path = MyWidget;
+			sourceTree = "<group>";
+		};
+		6269BC602ADFBEFF00BABB9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6269BC5C2ADFBE0D00BABB9A /* WidgetView.swift */,
+				6269BC5E2ADFBE1600BABB9A /* LiveActivityView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6269BC612ADFBF0800BABB9A /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				6269BC152ADF9DBE00BABB9A /* ContentView.swift */,
+				6269BC622ADFBF1C00BABB9A /* TabBar.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		6269BC642ADFC63300BABB9A /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				6269BC652ADFC64200BABB9A /* Styles.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6269BC5B2ADFB7AA00BABB9A /* MyWidgetLiveActivity.swift in Sources */,
+				6269BC662ADFC64200BABB9A /* Styles.swift in Sources */,
 				6269BC162ADF9DBE00BABB9A /* ContentView.swift in Sources */,
+				6269BC5F2ADFBE1600BABB9A /* LiveActivityView.swift in Sources */,
+				6269BC632ADFBF1C00BABB9A /* TabBar.swift in Sources */,
+				6269BC5D2ADFBE0D00BABB9A /* WidgetView.swift in Sources */,
 				6269BC142ADF9DBE00BABB9A /* WidgetSampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +442,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WidgetSample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -429,6 +472,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WidgetSample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
