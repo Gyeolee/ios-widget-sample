@@ -26,6 +26,8 @@ struct WidgetView: View {
                 }
                 
                 Text("\(count)")
+                    .font(.title3)
+                    .contentTransition(.numericText(value: Double(count)))
                 
                 HStack {
                     Button {

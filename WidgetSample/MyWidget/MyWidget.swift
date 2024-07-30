@@ -39,19 +39,46 @@ struct SimpleEntry: TimelineEntry {
 
 struct MyWidgetEntryView : View {
     var entry: Provider.Entry
+    @AppStorage("count", store: .appGroupShared) var count = 0
 
     var body: some View {
         VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
+            HStack {
+                Text("Time:")
+                Text(entry.date, style: .time)
+            }
             
             HStack {
                 Text("Count:")
-                Text("\(UserDefaults.appGroupShared.integer(forKey: "count"))")
+                
+                Text("\(count)")
+                    .font(.title3)
+                    .contentTransition(.numericText(value: Double(count)))
+                    .invalidatableContent()
             }
-
-//            Text("Favorite Emoji:")
-//            Text(entry.configuration.favoriteEmoji)
+            
+            HStack {
+                Toggle(isOn: false, intent: CountUpIntent()) {
+                    Image(systemName: "arrowshape.up.fill")
+                        .resizable()
+                        .frame(width: 10, height: 10)
+                }
+                .tint(.cyan)
+                
+                Toggle(isOn: false, intent: CountDownIntent()) {
+                    Image(systemName: "arrowshape.down.fill")
+                        .resizable()
+                        .frame(width: 10, height: 10)
+                }
+                .tint(.red)
+                
+                Toggle(isOn: false, intent: CountResetIntent()) {
+                    Image(systemName: "arrow.uturn.backward")
+                        .resizable()
+                        .frame(width: 10, height: 10)
+                }
+                .tint(.green)
+            }
         }
     }
 }
@@ -64,20 +91,6 @@ struct MyWidget: Widget {
             MyWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
-    }
-}
-
-extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
-        return intent
-    }
-    
-    fileprivate static var starEyes: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
-        return intent
     }
 }
 
