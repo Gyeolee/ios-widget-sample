@@ -9,6 +9,8 @@ import SwiftUI
 import WidgetKit
 
 struct WidgetView: View {
+    @AppStorage("count", store: .appGroupShared) var count = 0
+    
     var body: some View {
         ZStack {
             Color.yellow
@@ -16,11 +18,45 @@ struct WidgetView: View {
             
             VStack(spacing: 20) {
                 Button("Reload Timelines") {
-                    WidgetCenter.shared.reloadTimelines(ofKind: "MyWidget")
+                    reloadTimelines()
                 }
                 
                 Button("Reload All Timelines") {
                     WidgetCenter.shared.reloadAllTimelines()
+                }
+                
+                Text("\(count)")
+                
+                HStack {
+                    Button {
+                        count = count + 1
+                        reloadTimelines()
+                    } label: {
+                        Image(systemName: "arrowshape.up.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                    }
+                    .tint(.cyan)
+                    
+                    Button {
+                        count = count - 1
+                        reloadTimelines()
+                    } label: {
+                        Image(systemName: "arrowshape.down.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                    }
+                    .tint(.red)
+                    
+                    Button {
+                        count = 0
+                        reloadTimelines()
+                    } label: {
+                        Image(systemName: "arrow.uturn.backward")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                    }
+                    .tint(.green)
                 }
             }
         }
@@ -37,6 +73,12 @@ struct WidgetView: View {
                 }
             }
         }
+    }
+}
+
+extension WidgetView {
+    func reloadTimelines() {
+        WidgetCenter.shared.reloadTimelines(ofKind: "MyWidget")
     }
 }
 

@@ -22,7 +22,7 @@ struct Provider: AppIntentTimelineProvider {
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
+        for hourOffset in 0 ..< 10 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
             let entry = SimpleEntry(date: entryDate, configuration: configuration)
             entries.append(entry)
@@ -44,9 +44,14 @@ struct MyWidgetEntryView : View {
         VStack {
             Text("Time:")
             Text(entry.date, style: .time)
+            
+            HStack {
+                Text("Count:")
+                Text("\(UserDefaults.appGroupShared.integer(forKey: "count"))")
+            }
 
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
+//            Text("Favorite Emoji:")
+//            Text(entry.configuration.favoriteEmoji)
         }
     }
 }

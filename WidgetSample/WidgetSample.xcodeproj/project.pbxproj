@@ -24,6 +24,8 @@
 		6269BC5F2ADFBE1600BABB9A /* LiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269BC5E2ADFBE1600BABB9A /* LiveActivityView.swift */; };
 		6269BC632ADFBF1C00BABB9A /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269BC622ADFBF1C00BABB9A /* TabBar.swift */; };
 		6269BC662ADFC64200BABB9A /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269BC652ADFC64200BABB9A /* Styles.swift */; };
+		6271BA602C58A49300DA6FF3 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6271BA5F2C58A49300DA6FF3 /* UserDefaults+Extension.swift */; };
+		6271BA612C58A72000DA6FF3 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6271BA5F2C58A49300DA6FF3 /* UserDefaults+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,7 @@
 		6269BC652ADFC64200BABB9A /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		6271BA5C2C58A05300DA6FF3 /* WidgetSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetSample.entitlements; sourceTree = "<group>"; };
 		6271BA5D2C58A05F00DA6FF3 /* MyWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyWidgetExtension.entitlements; sourceTree = "<group>"; };
+		6271BA5F2C58A49300DA6FF3 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,7 @@
 			children = (
 				6269BC122ADF9DBE00BABB9A /* WidgetSample */,
 				6269BC482ADFA39E00BABB9A /* MyWidget */,
+				6271BA5E2C58A48100DA6FF3 /* Extensions */,
 				6269BC432ADFA39E00BABB9A /* Frameworks */,
 				6269BC112ADF9DBE00BABB9A /* Products */,
 			);
@@ -181,6 +185,14 @@
 				6269BC652ADFC64200BABB9A /* Styles.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		6271BA5E2C58A48100DA6FF3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6271BA5F2C58A49300DA6FF3 /* UserDefaults+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +302,7 @@
 				6269BC5F2ADFBE1600BABB9A /* LiveActivityView.swift in Sources */,
 				6269BC632ADFBF1C00BABB9A /* TabBar.swift in Sources */,
 				6269BC5D2ADFBE0D00BABB9A /* WidgetView.swift in Sources */,
+				6271BA602C58A49300DA6FF3 /* UserDefaults+Extension.swift in Sources */,
 				6269BC142ADF9DBE00BABB9A /* WidgetSampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +314,7 @@
 				6269BC4C2ADFA39E00BABB9A /* MyWidgetLiveActivity.swift in Sources */,
 				6269BC502ADFA39E00BABB9A /* AppIntent.swift in Sources */,
 				6269BC4A2ADFA39E00BABB9A /* MyWidgetBundle.swift in Sources */,
+				6271BA612C58A72000DA6FF3 /* UserDefaults+Extension.swift in Sources */,
 				6269BC4E2ADFA39E00BABB9A /* MyWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
